@@ -1,0 +1,8 @@
+<launch>
+	<include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+	<node name="yolo_v4_frome_realsense" pkg="yolo_v4" type="detectvideo.py"/>
+	<node name="yolo_roi_to_center" pkg="yolo_v4" type="yolo_roi_to_center.py" output="screen">
+		<param name="default_z" value="60" />
+
+	</node>
+</launch>
